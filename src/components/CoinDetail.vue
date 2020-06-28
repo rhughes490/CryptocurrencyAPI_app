@@ -1,6 +1,7 @@
 <template lang="html">
   <div v-if="coin" id="coinDetail">
     <div id="detailWrapper">
+    <coinclan-header :title="coin.name" />
       <h2>{{coin.name}}</h2>
       <div id="flexWrapper">
         <div id="left">
@@ -17,18 +18,24 @@
 </template>
 
 <script>
+
+import Header from "@/components/Header";
+
 export default {
   name: 'coin-detail',
-  props: ['coin']
+  props: ['coin'],
+    components: {
+    "coinclan-header": Header
+  }
 }
 </script>
 
 <style lang="css" scoped>
   #coinDetail {
     box-sizing: border-box;
-    height: 400px;
+    height: 450px;
     width: 60%;
-    background: #eee;
+    background: whitesmoke;
     color: #222;
     padding: 10px;
     border: 1px solid #ccc;
